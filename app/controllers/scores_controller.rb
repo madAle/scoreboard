@@ -10,7 +10,8 @@ class ScoresController < ApplicationController
   def create
     @score = Score.where(name: params[:name]).first
     if @score
-      @score.points = params[:points]
+      new_points = params[:points]
+      @score.points = new_points if new_points > @score.points
     else
       @score = Score.new(name: params[:name], points: params[:points])
     end
