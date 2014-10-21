@@ -1,12 +1,13 @@
 !!!
 %html
 	%head
+		= stylesheet_link_tag 'application', media: 'all', data: { 'turbolinks-track' => true }
+		= javascript_include_tag 'application', data: { 'data-turbolinks-track' => true }
+		= csrf_meta_tag
+		%meta{ name: 'viewport', content: "width=device-width, initial-scale=1.0" }
+
 		%title
 			Scoreboard
-			= stylesheet_link_tag 'application', media: 'all', data: { 'turbolinks-track' => true }
-			= javascript_include_tag 'application', data: { 'data-turbolinks-track' => true }
-			= csrf_meta_tags
-			%meta{ name: 'viewport', content: "width=device-width, initial-scale=1.0" }
 
-			%body
-				= yield
+		%body
+			= yield
