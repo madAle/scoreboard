@@ -1,0 +1,22 @@
+.row
+	.large-12.columns
+		.panel
+			%h1 Scoreboard
+.row
+	.large-12.columns
+		- total = @scores.size
+		- @scores.each_with_index do |score, index|
+			.row
+				.large-2.columns.small-3
+					= avatar_for index, total
+				.large-10.columns
+					%h1
+						= score.name
+			%hr/
+
+%footer.row
+	.large-12.columns
+		%hr/
+		.row
+			.large-5.columns
+				%p © Copyright 2014 Fancy Pixel
