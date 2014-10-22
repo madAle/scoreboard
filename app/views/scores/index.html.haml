@@ -3,15 +3,37 @@
 		.panel
 			%h1 Scoreboard
 .row
-	.large-12.columns
+	.large-12.columns.text-center
+		.large-1.columns
+			%h3
+				Rank
+		.large-2.columns
+			%h3
+				Mood
+		.large-8.columns
+			%h3
+				Name
+		.large-1.columns
+			%h3
+				Score
+%hr
+
+.row
+	.large-12.columns.text-center
 		- total = @scores.size
 		- @scores.each_with_index do |score, index|
 			.row
-				.large-2.columns.small-3
+				.large-1.columns
+					%h1
+						= index + 1
+				.large-2.columns
 					= avatar_for index, total
-				.large-10.columns
+				.large-8.columns
 					%h1
 						= score.name
+				.large-1.columns
+					%h1
+						= score.points
 			%hr/
 
 %footer.row
